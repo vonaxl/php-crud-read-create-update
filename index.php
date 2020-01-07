@@ -33,8 +33,8 @@ N.B.: qualunque scelta di front-end sara' tollerata, bella o brutta che sia :-) 
     ?>
 <body>
     <div class="container">
-        <div class="row pad justify-content-center">
-            <div class="col-4">
+        <div class="row pad justify-content-center align-items-center">
+            <div class="left col-4">
                 <div class="row justify-content-center text-left">
                     <h3>Aggiungi configurazione</h3>
                     <form id="myForm">
@@ -60,8 +60,10 @@ N.B.: qualunque scelta di front-end sara' tollerata, bella o brutta che sia :-) 
 
                 </div>
             </div>
-            <div class="col-7">
+            <div class="right col-7">
+                <h2 class="text-center">CONFIGURAZIONI</h2>
                 <div id='box' class="row justify-content-center">
+                    
 
                 </div>
             </div>
@@ -77,6 +79,7 @@ N.B.: qualunque scelta di front-end sara' tollerata, bella o brutta che sia :-) 
           <div class="opt">
               <div class="delete">x</div>
           </div>
+          <p>ID: {{id}} </p>
           <p>{{title}} </p>
           <p>{{description}} </p>
       </div>

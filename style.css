@@ -1,7 +1,10 @@
 .pad {
   margin-top: 3rem;
 }
-
+#box {
+  height: 70vh;
+  overflow-y: auto;
+}
 .match {
   border: 1px black dotted;
   position: relative;
