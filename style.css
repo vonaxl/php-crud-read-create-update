@@ -1,0 +1,22 @@
+.pad {
+  margin-top: 3rem;
+}
+
+.match {
+  border: 1px black dotted;
+  position: relative;
+}
+.match:hover {
+  background-color: lightgreen;
+}
+
+.opt {
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+
+.opt .delete:hover,
+.edit:hover {
+  cursor: pointer;
+}
