@@ -1,9 +1,9 @@
 <?php 
   header('Content-Type: application/json'); //imposta la lingua di communicazione js e php
-    list($id, $title, $description)=[
-        $_POST['id'],
+    list($title, $description,$id)=[
         $_POST['title'],
-        $_POST['description']
+        $_POST['description'],
+        $_POST['id']
     ];
     
     if(!$title || !$description || !$id){
@@ -22,13 +22,12 @@
 
     $sql = "
         UPDATE configurazioni
-        SET title='?',
-            description='?'
+        SET title=?,
+            description=?
             WHERE id=?
     ";
-    $stmt = $conn -> prepare($sql);
-    $stmt -> bind_param('ssi', $title, $description,$id);
-    $res = $stmt ->execute();
-
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssi", $title, $description, $id);
+    $res = $stmt->execute();
     echo json_encode($res);
 ?>

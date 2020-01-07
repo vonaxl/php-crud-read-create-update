@@ -33,24 +33,35 @@ N.B.: qualunque scelta di front-end sara' tollerata, bella o brutta che sia :-) 
     ?>
 <body>
     <div class="container">
-        <div class="row pad">
+        <div class="row pad justify-content-center">
             <div class="col-4">
-                <div class="row">
+                <div class="row justify-content-center text-left">
+                    <h3>Aggiungi configurazione</h3>
                     <form id="myForm">
                         <label for="title">Title:</label><br>            
                         <input type="text" name="title" placeholder="Title"> <br>
                         <label for="lastname">Description:</label><br>
                         <input type="text" name="description" placeholder="Descrizione"> <br>
-                        <label for="id">id(se si vuole modifcare):</label><br>
+                        <input type="submit" name="action" value="invia">
+                    </form>
+
+                </div>
+                <div class="row justify-content-center text-left">
+                    <h3>Modifica configurazione</h3>
+                    <form id="myForm2">
+                        <label for="title">Title:</label><br>            
+                        <input type="text" name="title" placeholder="Title"> <br>
+                        <label for="lastname">Description:</label><br>
+                        <input type="text" name="description" placeholder="Descrizione"> <br>
+                        <label for="id">id:</label><br>
                         <input type="text" name="id" placeholder="id"> <br>
                         <input type="submit" name="action" value="invia">
-                        <input id="btn" type="button" name="action" value="modifica">
                     </form>
 
                 </div>
             </div>
             <div class="col-7">
-                <div id='box' class="row ">
+                <div id='box' class="row justify-content-center">
 
                 </div>
             </div>
@@ -65,7 +76,6 @@ N.B.: qualunque scelta di front-end sara' tollerata, bella o brutta che sia :-) 
       <div class="col-10 match" data-id="{{id}}">
           <div class="opt">
               <div class="delete">x</div>
-              <div class="edit">...</div>
           </div>
           <p>{{title}} </p>
           <p>{{description}} </p>

@@ -78,9 +78,7 @@ function updConfigurazione() {
 function init() {
   getData();
   $("#myForm ").submit(newConfigurazione);
-  $("#btn").click(function() {
-    updConfigurazione();
-  });
+  $("#myForm2").submit(updConfigurazione);
   $(this).on("click", ".delete", function() {
     var id = $(this)
       .parents(".match")
