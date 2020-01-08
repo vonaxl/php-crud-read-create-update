@@ -35,8 +35,12 @@ function newConfigurazione() {
     method: "POST",
     data: me.serialize(),
     success: function(data) {
-      if (data) {
+      console.log(data);
+
+      if (data === true) {
         getData(data);
+      } else {
+        console.log("Error");
       }
     },
     error: function(error) {
@@ -93,11 +97,14 @@ function init() {
   $("#myForm ").submit(newConfigurazione);
   $("#myForm2").submit(updConfigurazione);
   $(this).on("click", ".delete", function() {
-    var id = $(this)
-      .parents(".match")
-      .data("id");
-    console.log(id);
-    delConfigurazione(id);
+    var risp = prompt("Vuoi eliminare questa configurazione? si/no");
+    if (risp == "si") {
+      var id = $(this)
+        .parents(".match")
+        .data("id");
+      console.log(id);
+      delConfigurazione(id);
+    }
   });
   $(this).on("click", ".upd", updConfigurazione);
 }
