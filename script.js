@@ -35,8 +35,9 @@ function newConfigurazione() {
     method: "POST",
     data: me.serialize(),
     success: function(data) {
-      getData(data);
-      // printData(data);
+      if (data) {
+        getData(data);
+      }
     },
     error: function(error) {
       console.log("error", error);
@@ -52,7 +53,9 @@ function delConfigurazione(elem) {
       id: elem
     },
     success: function(data) {
-      getData(data);
+      if (data) {
+        getData(data);
+      }
     },
     error: function(error) {
       console.log("error", error);
@@ -61,12 +64,22 @@ function delConfigurazione(elem) {
 }
 function updConfigurazione() {
   var me = $(this);
+  var nTitle = prompt("Inserisci il nuovo titolo");
+  var nDesc = prompt("Inserisci la nuova descrizione");
+  var id = me.parents(".match").data("id");
+  console.log(id);
   $.ajax({
     url: "updConfigurazione.php",
     method: "POST",
-    data: me.serialize(),
+    data: {
+      title: nTitle,
+      description: nDesc,
+      id: id
+    },
     success: function(data) {
-      getData(data);
+      if (data) {
+        getData(data);
+      }
       // printData(data);
     },
     error: function(error) {
@@ -82,10 +95,11 @@ function init() {
   $(this).on("click", ".delete", function() {
     var id = $(this)
       .parents(".match")
-      .data();
+      .data("id");
     console.log(id);
     delConfigurazione(id);
   });
+  $(this).on("click", ".upd", updConfigurazione);
 }
 
 $(document).ready(init);

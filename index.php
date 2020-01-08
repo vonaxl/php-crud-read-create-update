@@ -46,7 +46,7 @@ N.B.: qualunque scelta di front-end sara' tollerata, bella o brutta che sia :-) 
                     </form>
 
                 </div>
-                <div class="row justify-content-center text-left">
+                <!-- <div class="row justify-content-center text-left">
                     <h3>Modifica configurazione</h3>
                     <form id="myForm2">
                         <label for="title">Title:</label><br>            
@@ -58,7 +58,7 @@ N.B.: qualunque scelta di front-end sara' tollerata, bella o brutta che sia :-) 
                         <input type="submit" name="action" value="invia">
                     </form>
 
-                </div>
+                </div> -->
             </div>
             <div class="right col-7">
                 <h2 class="text-center">CONFIGURAZIONI</h2>
@@ -77,7 +77,8 @@ N.B.: qualunque scelta di front-end sara' tollerata, bella o brutta che sia :-) 
 
       <div class="col-10 match" data-id="{{id}}">
           <div class="opt">
-              <div class="delete">x</div>
+            <span class="upd" title="modifica la configurazione">...</span>
+            <span class="delete" title="elimina configurazione">x</span>
           </div>
           <p>ID: {{id}} </p>
           <p>{{title}} </p>

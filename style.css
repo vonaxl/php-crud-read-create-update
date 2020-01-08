@@ -20,6 +20,6 @@
 }
 
 .opt .delete:hover,
-.edit:hover {
+.upd:hover {
   cursor: pointer;
 }
